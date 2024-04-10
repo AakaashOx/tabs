@@ -12,11 +12,27 @@
     position: relative;
 }
 
+.intro {
+    padding: 25px;
+    margin: 1%;
+    border: 2px solid black;
+    border-radius: 0.2cm;
+    width: 25%;
+    height: 85%;
+    animation-duration: 1s; /* Set animation duration */
+}
+
+p {
+    text-align: justify;
+}
+
 .mainbox {
     margin: 1%;
     position: relative;
-    width: 65%;
+    width: 70%;
     height: 95%; /* Set height to 100% of container height */
+    margin-left: 1%;
+    animation-duration: 0.5s;
 }
 
 .mtextarea {
@@ -26,6 +42,7 @@
     border-color: black;
     border: 2px solid;
     border-radius: 0.2cm;
+    animation-duration: 0.5s;
 }
 
 .mtextarea::placeholder {
@@ -36,48 +53,96 @@
 .buttonbox,
 .desbox {
     padding: 10px;
-    margin: 3%;
+    margin-top: 3%;
+    margin-right: 0.5%;
     position: relative;
-    height: 80%; /* Set height to 80% of container height */
+    height: 42%; /* Set height to 42% of container height */
     border-color: black;
     border: 2px solid;
     border-radius: 0.2cm;
+    display: none; /* Initially hide the elements */
+    animation-duration: 1s;
+}
+
+.button-des-container {
+    display: none;
+    flex-direction: column;
+    width: 35%;
+    animation-duration: 1s;
 }
 
 .flex-container {
     display: flex;
     height: 75%; /* Set height to 75% of container height */
+    animation-duration: 1s;
 }
 
-.button-des-container {
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-}
-
-.btn-container{
+.btn-container {
     display: flex;
 }
 
-.submitbtn{
+.submitbtn {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0.5%;
     border-radius: 0.2cm;
-    position: absolute;
-    right: 35.5%;
-    
 }
 
-.resbtn{
+.resbtn {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0.5%;
     border-radius: 0.2cm;
-    position: absolute;
-    right: 41%;
+    margin-left: 45%;
+}
+
+/* Slide out animation */
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+/* Slide left animation */
+@keyframes slideleft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-23%);
+    }
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(-0%);
+    }
+}
+
+/* Apply animations */
+.intro.active {
+    animation-name: slideOut; /* Apply slideOut animation */
+}
+
+.mainbox.active, .mtextarea.active, .flex-container.active {
+    animation-name: slideleft; /* Apply slideleft animation */
+}
+
+.button-des-container.active {
+    animation-name: slideIn; /* Apply slideIn animation */
+}
+
+.buttonbox.active, .desbox.active {
+    animation-name: slideIn; /* Apply slideIn animation */
 }

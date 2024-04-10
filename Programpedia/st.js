@@ -1,32 +1,8 @@
 
+
+
+
 function myFunction() {
-
-    var introbox = document.getElementById('introbox');
-    var mainbox = document.getElementById('box-1');
-    var entertext = document.getElementById('entertext');
-
-    var btndesbox = document.getElementById('twoboxes');
-    var box2 = document.getElementById('box-2');
-    var box3 = document.getElementById('box-3');
-
-
-    btndesbox.style.display = 'block';
-    box2.style.display = 'block';
-    box3.style.display = 'block';
-
-    introbox.classList.add('active');
-    mainbox.classList.add('active');
-    entertext.classList.add('active');
-
-    btndesbox.classList.add('active');
-    box2.classList.add('active');
-    box3.classList.add('active');
-
-    setTimeout(() => {
-        introbox.style.display = 'none';
-
-    }, 500); // Set timeout to match the animation duration  
-
     const text = document.getElementById("entertext").value;
     const patterns = [
         { pattern: /%c/g, buttonText: "%c", description: "%c is used to print a character." },
