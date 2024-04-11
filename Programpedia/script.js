@@ -9,6 +9,9 @@ function myFunction() {
     var box2 = document.getElementById('box-2');
     var box3 = document.getElementById('box-3');
 
+    mainbox.style.width = '57%';
+    mainbox.style.marginLeft = '4%';
+
 
     btndesbox.style.display = 'block';
     box2.style.display = 'block';
@@ -17,6 +20,7 @@ function myFunction() {
     introbox.classList.add('active');
     mainbox.classList.add('active');
     entertext.classList.add('active');
+
 
     btndesbox.classList.add('active');
     box2.classList.add('active');

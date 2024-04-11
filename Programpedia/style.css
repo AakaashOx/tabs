@@ -4,8 +4,7 @@
 }
 
 .title {
-    padding: 10px;
-    margin: 1%;
+    padding: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,8 +30,8 @@ p {
     position: relative;
     width: 70%;
     height: 95%; /* Set height to 100% of container height */
-    margin-left: 1%;
     animation-duration: 0.5s;
+
 }
 
 .mtextarea {
@@ -50,13 +49,21 @@ p {
     color: gray;
 }
 
-.buttonbox,
-.desbox {
+.flex-container {
+    display: flex;
+    height: 75%; /* Set height to 75% of container height */
+    animation-duration: 0.5s;
+
+}
+
+
+.buttonbox {
     padding: 10px;
-    margin-top: 3%;
-    margin-right: 0.5%;
+    margin-top: 2.5%;
+    margin-left: 6%;
+    margin-right: 8%;
     position: relative;
-    height: 42%; /* Set height to 42% of container height */
+    height: 40%; /* Set height to 42% of container height */
     border-color: black;
     border: 2px solid;
     border-radius: 0.2cm;
@@ -64,16 +71,30 @@ p {
     animation-duration: 1s;
 }
 
+.desbox {
+    padding: 10px;
+    margin-top: 5.5%;
+    margin-bottom: 1%;
+    margin-left: 6%;
+    margin-right: 8%;
+    position: relative;
+    height: 40%; 
+    border-color: black;
+    border: 2px solid;
+    border-radius: 0.2cm;
+    display: none; 
+    animation-duration: 1s;
+    transition: transform 0.5s ease-out;
+}
+
+.desbox:hover {
+    transform: scale(1.1); 
+}
+
 .button-des-container {
     display: none;
     flex-direction: column;
-    width: 35%;
-    animation-duration: 1s;
-}
-
-.flex-container {
-    display: flex;
-    height: 75%; /* Set height to 75% of container height */
+    width: 43%;
     animation-duration: 1s;
 }
 
@@ -110,13 +131,12 @@ p {
     }
 }
 
-/* Slide left animation */
 @keyframes slideleft {
     0% {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-23%);
+        transform: translateX(-28.5%);
     }
 }
 
@@ -126,7 +146,7 @@ p {
         transform: translateX(200%);
     }
     100% {
-        transform: translateX(-0%);
+        transform: translateX(0%);
     }
 }
 
@@ -137,6 +157,7 @@ p {
 
 .mainbox.active, .mtextarea.active, .flex-container.active {
     animation-name: slideleft; /* Apply slideleft animation */
+    animation-timing-function: ease-out; /* Smooth animation */
 }
 
 .button-des-container.active {
