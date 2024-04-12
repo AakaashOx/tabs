@@ -91,11 +91,22 @@ function myFunction() {
 
     ];
 
+    document.getElementById("box-2").innerHTML="";
+    document.getElementById("box-3").innerHTML="";
+
     patterns.forEach(({ pattern, buttonText, description }) => {
         const result = pattern.test(text);
         if (result) {
             const btn = document.createElement("button");
             btn.innerHTML = buttonText;
+            btn.style.padding = '5px';
+            btn.style.marginRight = '5px';
+            btn.style.marginBottom  = '5px';
+            btn.style.backgroundColor = 'black';
+            btn.style.color = 'white';
+            btn.style.borderRadius = '0.1cm';
+            btn.style.borderColor = 'black';
+
             document.getElementById("box-2").appendChild(btn).addEventListener("click", () => {
                 document.getElementById("box-3").innerHTML = description;
             });
