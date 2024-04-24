@@ -1,0 +1,36 @@
+.menuright {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden outside the viewport */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: right 0.3s ease-in-out; /* Smooth transition */
+}
+
+.menuright ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menuright ul li {
+  padding: 10px;
+}
+
+.menuright ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#menurightButton {
+  cursor: pointer;
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  overflow: hidden; 
+}
+
+#menurightButton:hover{
+  cursor: pointer;
+}
+
