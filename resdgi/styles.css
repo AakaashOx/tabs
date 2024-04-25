@@ -1,36 +1,42 @@
-.menuright {
-  position: fixed;
-  top: 0;
-  right: -250px; /* Initially hidden outside the viewport */
-  width: 250px;
-  height: 100%;
-  background-color: #333;
-  transition: right 0.3s ease-in-out; /* Smooth transition */
+
+#crtbtndiv {
+  position: absolute; /* Position div absolutely */
+  top: calc(100% + 5px); /* Position below the button */
+  left: 50%; /* Position horizontally centered */
+  transform: translateX(-50%); /* Center horizontally */
+  display: none;
+  border: #000000 2px solid;
+  z-index: 2;
 }
 
-.menuright ul {
-  list-style: none;
-  padding: 0;
+#crtbtndiv.show {
+  display: block; /* Show the div if it has the "show" class */
 }
 
-.menuright ul li {
-  padding: 10px;
-}
-
-.menuright ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-#menurightButton {
+#crtbtn{
+  border-radius: 5px;
+  border: #afafafb9 1px solid;
+  background-color: #f4f5f6;
+  padding: 5px 8px 4px; /* Adjust padding as needed */
   cursor: pointer;
-  width: 40px; 
-  height: 40px; 
-  border-radius: 50%; 
-  overflow: hidden; 
+  position: relative;
 }
 
-#menurightButton:hover{
-  cursor: pointer;
+#crtbtn:hover::after {
+  content: "Create new..."; /* Directly specify the tooltip message */
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 110%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* Prevent line breaks */
+  z-index: 1; /* Ensure the tooltip is above other content */
+  visibility: hidden; /* Hide by default */
 }
 
+#crtbtn:hover::after {
+  visibility: visible; /* Show on hover */
+}

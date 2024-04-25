@@ -5,21 +5,48 @@ const createbtn = document.getElementById('crtbtn');
 const crtbtndiv = document.getElementById('crtbtndiv');
 
 
-function createNew() {
-    // Toggle the visibility of crtbtndiv
-    crtbtndiv.classList.toggle('show');
+
+function positionDivRelativeToButton() {
+  const buttonRect = createbtn.getBoundingClientRect();
+  const buttonTop = buttonRect.top + window.scrollY;
+  const buttonLeft = buttonRect.left + window.scrollX;
+  
+  crtbtndiv.style.top = `${buttonTop + createbtn.offsetHeight + 5}px`;
+  crtbtndiv.style.left = `${buttonLeft + (createbtn.offsetWidth / 2)}px`;
 }
 
-// Add event listener to detect clicks on the document body
+function createNew() {
+  if (crtbtndiv.classList.contains('show')) {
+      crtbtndiv.classList.remove('show');
+      createbtn.classList.remove('tooltip-active'); // Hide tooltip
+      createbtn.style.pointerEvents = 'auto'; // Re-enable pointer events for hover
+  } else {
+      crtbtndiv.classList.add('show');
+      createbtn.classList.add('tooltip-active'); // Show tooltip
+      createbtn.style.pointerEvents = 'none'; // Disable pointer events for hover
+  }
+  positionDivRelativeToButton();
+  
+  // Toggle the visibility of the tooltip content directly
+  const tooltipContent = document.querySelector('#crtbtn::after');
+  if (tooltipContent) {
+      tooltipContent.style.visibility = crtbtndiv.classList.contains('show') ? 'hidden' : 'visible';
+  }
+}
+
 document.body.addEventListener('click', function(event) {
-    // Check if the clicked element is not inside crtbtndiv or createbtn
-    if (!crtbtndiv.contains(event.target) && event.target !== createbtn && !event.target.closest('button#crtbtn')) {
-        // Hide crtbtndiv if it is visible
-        if (crtbtndiv.classList.contains('show')) {
-            crtbtndiv.classList.remove('show');
-        }
-    }
+  if (!crtbtndiv.contains(event.target) && event.target !== createbtn && !event.target.closest('button#crtbtn')) {
+      if (crtbtndiv.classList.contains('show')) {
+          crtbtndiv.classList.remove('show');
+          createbtn.classList.remove('tooltip-active'); // Hide tooltip
+          createbtn.style.pointerEvents = 'auto'; // Re-enable pointer events for hover
+      }
+  }
 });
+
+window.addEventListener('resize', positionDivRelativeToButton);
+window.addEventListener('scroll', positionDivRelativeToButton);
+
 
 function menubtn() {
   // Get the computed style of the menu element to check its left position
