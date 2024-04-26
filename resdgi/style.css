@@ -6,7 +6,7 @@ body {
   width: 100%;
 }
 
-/*header div*/
+/*1st header div*/
 #header1 {
   margin: 0;
   height: 8vh;
@@ -308,9 +308,70 @@ body {
   margin-top: 5px;
 }
 
+/*2nd header div*/
+#header2{
+  border-bottom: 2px rgb(220, 220, 220) solid;
+  margin: 0;
+  height: 5.5vh;
+  width: 99%;
+  background-color: #f4f5f6;
+  display: flex;
+  align-items: center; 
+  padding-left: 10px;
+}
 
 
+#htnavbar {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+}
 
+#htnavbar a {
+  text-decoration: none;
+  color: black; /* Default text color */
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  position: relative; /* Required for positioning the box */
+}
+
+#htnavbar a svg {
+  vertical-align: bottom;
+  margin-right: 5px;
+  fill: rgb(92, 92, 92);
+}
+
+#htnavbar a::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Position below the link */
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: rgb(255, 128, 0); /* Color of the line */
+  display: none; /* Initially hide the line */
+}
+
+#htnavbar a:hover {
+  background-color: #ebebeb; /* Darker background color on hover */
+}
+
+#htnavbar a.active {
+  font-weight:600; /* Make the font bold for the active tab */
+}
+
+#htnavbar a.active::after {
+  font-weight: bold;
+  margin-top: 7px;
+  margin-bottom: 0;
+  display: block; /* Show the line on hover and for the active tab */
+}
 
 
 

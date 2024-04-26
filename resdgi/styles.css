@@ -1,42 +1,53 @@
-
-#crtbtndiv {
-  position: absolute; /* Position div absolutely */
-  top: calc(100% + 5px); /* Position below the button */
-  left: 50%; /* Position horizontally centered */
-  transform: translateX(-50%); /* Center horizontally */
-  display: none;
-  border: #000000 2px solid;
-  z-index: 2;
+#header2 {
+  background-color: #f4f5f6; /* Background color of the navigation bar */
+  padding-top: 10px;
+  padding-bottom: 0px;
 }
 
-#crtbtndiv.show {
-  display: block; /* Show the div if it has the "show" class */
+#htnavbar {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
-#crtbtn{
+#htnavbar a {
+  text-decoration: none;
+  color: black; /* Default text color */
+  padding: 5px 10px;
+  margin: 5px;
   border-radius: 5px;
-  border: #afafafb9 1px solid;
-  background-color: #f4f5f6;
-  padding: 5px 8px 4px; /* Adjust padding as needed */
-  cursor: pointer;
-  position: relative;
+  position: relative; /* Required for positioning the box */
 }
 
-#crtbtn:hover::after {
-  content: "Create new..."; /* Directly specify the tooltip message */
-  background-color: black;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
+#htnavbar a svg {
+  vertical-align: bottom;
+  margin-bottom: 1px;
+  margin-right: 5px;
+}
+
+#htnavbar a::after {
+  content: "";
   position: absolute;
-  top: 110%; /* Position above the button */
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap; /* Prevent line breaks */
-  z-index: 1; /* Ensure the tooltip is above other content */
-  visibility: hidden; /* Hide by default */
+  top: 100%; /* Position below the link */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 128, 0); /* Color of the line */
+  display: none; /* Initially hide the line */
 }
 
-#crtbtn:hover::after {
-  visibility: visible; /* Show on hover */
+#htnavbar a:hover {
+  background-color: #ebebeb; /* Darker background color on hover */
 }
+
+#htnavbar a.active {
+  font-weight: bold; /* Make the font bold for the active tab */
+}
+
+#htnavbar a.active::after {
+  margin-top: 5px;
+  margin-bottom: 0;
+  display: block; /* Show the line on hover and for the active tab */
+}
+
