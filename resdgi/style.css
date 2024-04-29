@@ -20,28 +20,82 @@ body {
 
 /*header 1st div*/
 
+/*left menu*/
+
+#lftmenuh{
+  display: flex;
+  justify-content: space-between;
+}
+
+#imglftmenu{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%; 
+  overflow: hidden;
+}
+
+#closebtnmenu{
+  margin-top: 15px;
+  margin-right: 5%;
+  background-color: #e7e7e9;
+  height: 4vh;
+  width: 4vh;
+  color: #3b3b3b;
+  font-weight: 300;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
 .menu {
   position: fixed;
   top: 0;
-  left: -250px; /* Initially hides the menu off-screen */
-  width: 250px;
+  left: -320px; /* Initially hides the menu off-screen */
+  width: 320px;
   height: 100%;
-  background: #333;
+  color: #000000;
+  border-radius: 10px;
+  background: #ffffff;
   transition: left 0.3s ease-in-out;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(46, 46, 46, 0.2);
 }
 
-.menu ul {
-  list-style: none;
-  padding: 0;
+.button-conlftm {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
-.menu ul li {
-  padding: 10px;
+.button-conlftm button {
+  font-size: 13.8px;
+  color: #333;
+  font-weight: lighter;
+  text-align: left;
+  padding: 6px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
 }
 
-.menu ul li a {
-  color: #fff;
-  text-decoration: none;
+.button-conlftm button:hover {
+  background-color: #f0f0f0;
+}
+
+.button-conlftm button:focus {
+  outline: none;
+}
+
+.hrlinemenu {
+  border: none;
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
 }
 
 #menuButton{
@@ -65,6 +119,8 @@ body {
   display: flex;
   padding-top: 2px;
 }
+
+/*username and repo */
 
 #username{
   margin-top: 5%;
@@ -266,28 +322,90 @@ body {
   visibility: visible; /* Show on hover */
 }
 
+/*right menu*/
+
 .menuright {
   position: fixed;
   top: 0;
-  right: -250px; /* Initially hidden outside the viewport */
-  width: 250px;
+  right: -320px; /* Initially hidden outside the viewport */
+  width: 320px;
   height: 100%;
-  background-color: #333;
-  transition: right 0.3s ease-in-out; /* Smooth transition */
+  color: #000000;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(46, 46, 46, 0.2);
 }
 
-.menuright ul {
-  list-style: none;
-  padding: 0;
+#rgtmenuh{
+  display: flex;
+  justify-content:left
 }
 
-.menuright ul li {
-  padding: 10px;
+#usrnamergtm{
+  font-weight: 600;
+  margin-left: 2%;
+  margin-right: 50%;
 }
 
-.menuright ul li a {
-  color: #fff;
-  text-decoration: none;
+#imgrgtmenu{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 46px; 
+  height: 34px; 
+  border-radius: 50%; 
+  overflow: hidden;
+}
+
+#closebtnmenurgt{
+  margin-top: 15px;
+  margin-right: 5%;
+  background-color: #e7e7e9;
+  height: 4vh;
+  width: 4vh;
+  color: #3b3b3b;
+  font-weight: 300;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.button-conrgtm {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 85vh;
+}
+
+.button-conrgtm button {
+  font-size: 13.8px;
+  color: #333;
+  font-weight: lighter;
+  text-align: left;
+  padding: 6px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-conrgtm button:hover {
+  background-color: #f0f0f0;
+}
+
+.button-conrgtm button:focus {
+  outline: none;
+}
+
+.hrlinemenu {
+  border: none;
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
 }
 
 #menurightButton {
@@ -468,4 +586,3 @@ body {
     text-align: justify;
 }
 
-  

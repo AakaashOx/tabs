@@ -1,6 +1,7 @@
 const menuButton = document.getElementById('menuButton');
 const menuButtonIcon = document.getElementById('menuButtonIcon');
 const menu = document.getElementById('menu');
+const menurgt = document.getElementById('usermright');
 const createbtn = document.getElementById('crtbtn');
 const crtbtndiv = document.getElementById('crtbtndiv');
 
@@ -68,19 +69,27 @@ function menubtn() {
   const leftPosition = computedStyle.getPropertyValue('left');
 
   // Toggle the menu based on its current state
-  if (leftPosition === '-250px') {
+  if (leftPosition === '-320px') {
     menu.style.left = '0';
     document.addEventListener('click', closeMenuOutside);
   } else {
-    menu.style.left = '-250px';
+    menu.style.left = '-320px';
     document.removeEventListener('click', closeMenuOutside);
   }
+}
+
+function closebtnmenu(){
+  menu.style.left = '-320px';
+}
+
+function closebtnmenurgt(){
+  usermright.style.right = '-320px';
 }
 
 function closeMenuOutside(event) {
   // Close the menu if clicked outside of it and the menu button
   if (!menu.contains(event.target) && event.target !== menuButton && event.target !== menuButtonIcon) {
-    menu.style.left = '-250px';
+    menu.style.left = '-320px';
     document.removeEventListener('click', closeMenuOutside);
   }
 }
@@ -96,12 +105,12 @@ function toggleMenu() {
   var menu = document.getElementById('usermright');
   var menuButton = document.getElementById('menurightButton');
   
-  if (menu.style.right === '-250px' || menu.style.right === '') {
+  if (menu.style.right === '-320px' || menu.style.right === '') {
     // Display the menu
     menu.style.right = '0';
   } else {
     // Hide the menu
-    menu.style.right = '-250px';
+    menu.style.right = '-320px';
   }
   document.addEventListener('click', function(event) {
       var menu = document.getElementById('usermright');
@@ -110,7 +119,7 @@ function toggleMenu() {
       // Check if the clicked element is outside of the menu and the menu button
       if (!menu.contains(event.target) && event.target !== menuButton) {
         // Hide the menu
-        menu.style.right = '-250px';
+        menu.style.right = '-320px';
       }
     });
     
