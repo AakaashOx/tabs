@@ -228,3 +228,13 @@ p {
 .buttonbox.active, .desbox.active {
     animation-name: slideIn; /* Apply slideIn animation */
 }
+
+.btn-style {
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 0.1cm;
+    border-color: black;
+  }

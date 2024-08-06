@@ -60,7 +60,8 @@ function myFunction() {
         { pattern: /unsigned/g, buttonText: "unsigned", description: "Unsigned is also one of the datastype in which is a variable type of int this data type can hold zero and positive numbers. This unsigned int is data type cannot represent a negative number." },
         { pattern: /printf/g, buttonText: "printf", description: "The printf() is a library function to send formatted output to the screen. The function prints the string inside quotations." },
         { pattern: /scanf/g, buttonText: "scanf", description: "scanf() is one of the commonly used function to take input from the user. The scanf() function reads formatted input from the standard input such as keyboards." },
-        { pattern: /\+/g, buttonText: "+", description: "Subtraction is a arithmetic operator. Subtracts second operand from the first." },
+        { pattern: /\+/g, buttonText: "+", description: "Addition is a arithmetic operator. Adds both operands." },
+        { pattern: /\-/g, buttonText: "-", description: "Subtraction is a arithmetic operator. Subtracts second operand from the first." },
         { pattern: /\*/g, buttonText: "*", description: "Multiplication is a arithmetic operator. Multiplies both operands." },
         { pattern: /\//g, buttonText: "/", description: "Division is a arithmetic operator. Divides numerator by de-numerator." },
         { pattern: /\%/g, buttonText: "%", description: "Modulus is a arithmetic operator. Modulus Operator and remainder of after an integer division." },
@@ -79,10 +80,11 @@ function myFunction() {
         { pattern: /\>\={1,1}/g, buttonText: ">=", description: ">= Greater than or equal to is a relational operator. Checks if the value of left operand is greater than or equal to the value of right operand. If yes, then the condition becomes true." },
         { pattern: /\<\={1,1}/g, buttonText: "<=", description: "<= Less than or equal is a relational operator. Checks if the value of left operand is less than or equal to the value of right operand. If yes, then the condition becomes true." },
         { pattern: /\;/g, buttonText: ";", description: "; Semicolons are end statements in C. The semicolon tells that the current statement has been terminated and other statements following are new statements. Usage of semicolon in C will remove ambiguity and confusion while looking at the code. They are not used in between the control flow statements but are used in separating the conditions in looping." },
-        { pattern: /(?<=int )(.*?)(?=;)/g, buttonText: "int", description: "integer variable" },
-        { pattern: /(?<=float )(.*?)(?=;)/g, buttonText: "float", description: "float variable" },
-        { pattern: /(?<=double )(.*?)(?=;)/g, buttonText: "double", description: "double variable" },
-        { pattern: /(?<=char )(.*?)(?=;)/g, buttonText: "char", description: "character variable" },
+        { pattern: /int (\w+);/g, buttonText: "i", description: "integer variable" },
+        { pattern: /float (\w+);/g, buttonText: "f", description: "float variable" },
+        { pattern: /double (\w+);/g, buttonText: "d", description: "double variable" },
+        { pattern: /char (\w+);/g, buttonText: "c", description: "character variable" },
+        { pattern: /\/\/{1,1}/g, buttonText: "//", description: "Comment lines. Displays description about the code" },
         { pattern: /\{/g, buttonText: "{", description: "{ Open curly bracket is used to signify the start of a series of statements. Curly braces are used to group a set of statements. Often we use them along with loops and conditional statements in order to avoid confusion and to define a clear scope." },
         { pattern: /\}/g, buttonText: "}", description: "} Closed curly bracket is used to signify the end of a series of statements. Curly braces are used to group a set of statements. Often we use them along with loops and conditional statements in order to avoid confusion and to define a clear scope." },
         { pattern: /\(/g, buttonText: "(", description: "( Open round bracket is used to signify a start of group of functions, conditions, operation or operands. Round brackets is generally used with a function( User defined or library defined ) like main(), for(), strlen() etc. This parentheses helps us to pass values, initiate values, iterate values to the function’s body statements to manipulate it." },
@@ -90,12 +92,16 @@ function myFunction() {
         { pattern: /\,/g, buttonText: ",", description: "Comma acts as a separator when used with function calls and definitions, function like macros, variable declarations, enum declarations, and similar constructs. The comma operator is a binary operator that evaluates its first operand and discards the result, it then evaluates the second operand and returns this value (and type)." }
 
     ];
+    
 
     document.getElementById("box-2").innerHTML="";
     document.getElementById("box-3").innerHTML="";
 
+    
+
     patterns.forEach(({ pattern, buttonText, description }) => {
         const result = pattern.test(text);
+
         if (result) {
             const btn = document.createElement("button");
             btn.innerHTML = buttonText;
@@ -113,6 +119,8 @@ function myFunction() {
         }
     });
 }
+
+
 
 function resetbtn() {
 
