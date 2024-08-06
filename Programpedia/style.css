@@ -1,30 +1,37 @@
+@font-face {
+    font-family: 'Digibats';
+    src: url('fonts/DigibatsItalic-7OjpK.otf') format('opentype');
+  }
+
 #body {
     background-image:
       linear-gradient(
-        #f5feff, #ffffff,#f2fdff
+        #1f2437, #111b2a, #1f232a
       );
 }
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: 97vh;
+    border: #00ffd5 2px solid;
 }
 
 .title {
-    padding: 1px;
+    padding: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: black;
-    border-radius: 0.2cm;
-
+    background: transparent;
+    
 }
 
 #programpedia{
-    font-family:'Gill Sans', 'Gill Sans MT'; 
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-family: 'Digibats', sans-serif;
+    font-size: 3rem;
+    background: linear-gradient(#00ff8c,#37ffde,#18ffc5,#00ff9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -33,27 +40,31 @@
     margin: 1%;
     width: 25%;
     height: 85%;
-    border-radius: 0.2cm;
+    border: 2px solid #37ffde; 
     animation-duration: 1s;
-    font-family:'Century Gothic';
-    background-color:rgb(255, 255, 255);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Space Mono', cursive;
+    background-image:
+      linear-gradient(
+        #1f2437, #212832, #1f232a
+      );
+    box-shadow: 0px 0px 5px rgba(0, 255, 195, 0.9);
     overflow: auto;
 }
 
 .introhead{
     padding-bottom: 1px;
-    border-bottom: black 2px solid;
+    border-bottom: #00ffd5 2px solid;
 }
 
 h2 {
-    color: rgb(0, 0, 0);
+    color:  #00ffd5;
     text-align: center;
 }
 
 p {
     text-align: justify;
     font-size: 18px;
+    color:  #00ffd5;
 }
 
 .mainbox {
@@ -69,18 +80,23 @@ p {
     padding: 19px;
     width: 95%;
     height: 92%;
-    border: none;
     animation-duration: 0.5s;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #37ffde; 
+    color:  #00ffd5;
+    background-image:
+      linear-gradient(
+        #1f2437, #212832, #1f232a
+      );
+    box-shadow: 0px 0px 5px rgba(0, 255, 195, 0.9);
     font-size: 16px;
-    font-family: monospace;
+    font-family: 'Space Mono', cursive;
 }
 
 .mtextarea::placeholder {
     padding: 0px;
-    color: gray;
+    color:  #00ffd5;
     font-size: 14px;
-    font-family: monospace;
+    font-family: 'Space Mono', cursive;
 }
 
 .flex-container {
@@ -98,11 +114,13 @@ p {
     margin-right: 8%;
     position: relative;
     height: 40%; 
-    border-radius: 0.2cm;
+    border: 2px solid #37ffde; 
+    color: #00ffd5;
     display: none; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    font-family:'Century Gothic';
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 191, 0.8);
+    font-family: 'Space Mono', cursive;
     animation-duration: 1s;
+    transition: transform 0.5s ease-out;
     overflow: auto;
 }
 
@@ -113,18 +131,17 @@ p {
     margin-left: 6%;
     margin-right: 8%;
     position: relative;
-    height: 40%; 
-    border-radius: 0.2cm;
+    height: 39%;
+    border: 2px solid #37ffde; 
     display: none; 
     text-align: justify;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    font-family:'Century Gothic';
+    box-shadow: 0px 0px 5px 0px rgba(0, 255, 191, 0.9);
+    font-family: 'Space Mono', cursive;
     animation-duration: 1s;
-    transition: transform 0.5s ease-out;
     overflow: auto;
 }
 
-.desbox:hover {
+.buttonbox:hover {
     transform: scale(1.1); 
 }
 
@@ -147,11 +164,14 @@ p {
     margin-top: 0.5%;
     margin-right: 0.5%;
     margin-left: 0.5%;
-    border-radius: 0.2cm;
-    background-color: black;
-    font-family:'Century Gothic';
+    border-color: #00ffd5;
+    background-image:
+    linear-gradient(
+      #1f2437, #111b2a, #1f232a
+    );
+    font-family: 'Space Mono', cursive;
     font-weight: bold;
-    color: #ffffff;
+    color: #00ffd5;
     font-size: 15px;
     transition: background-color 0.3s;
 }
@@ -168,18 +188,24 @@ p {
     margin-top: 0.5%;
     margin-left: 0.5%;
     margin-right: 0.5%;
-    border-radius: 0.2cm;
+    border-color: #00ffd5;
     margin-left: 45%;
-    background-color: black;
-    font-family:'Century Gothic';
+    background-image:
+    linear-gradient(
+      #1f2437, #111b2a, #1f232a
+    );
+    font-family: 'Space Mono', cursive;
     font-weight: bold;
-    color: #ffffff;
+    color: #00ffd5;
     font-size: 15px;
     transition: background-color 0.3s;
 }
 
 .resbtn:active {
-    background-color: #333; 
+    background-image:
+    linear-gradient(
+      #1f2437, #111b2a, #1f232a
+    );
 }
 
 /* Slide out animation */
@@ -230,11 +256,15 @@ p {
 }
 
 .btn-style {
-    padding: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    background-color: black;
-    color: white;
+    padding: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-image:
+    linear-gradient(
+      #1f2437, #111b2a, #1f232a
+    );
+    color: #00ffd5;;
     border-radius: 0.1cm;
-    border-color: black;
+    border-color: #00ffd5;
+    font-family: 'Space Mono', cursive;
   }

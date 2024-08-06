@@ -845,6 +845,23 @@ function myFunction55() {
 }
 }
 
+{  
+  let pattern56 = /\/\/{1,1}/g;
+let result56 = pattern56.test(text)
+if (result56 == true)
+  {
+const btn56 = document.createElement("button");
+btn56.innerHTML = "//";
+btn56.classList.add("btn-style");
+document.getElementById("box-3").appendChild(btn56).addEventListener("click", myFunction56)
+function myFunction56() {
+  document.getElementById("box-2").innerHTML = "Comment line. Displays description about the code.";
+}
+}
+}
+
+
+
 }
 
 function resetbtn() {
